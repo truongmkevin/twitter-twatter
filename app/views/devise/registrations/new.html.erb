@@ -37,7 +37,12 @@
     <%= f.text_area :bio, placeholder: "Tell us about yourself...", class: "form-control" %>
   </div>
 
-  <div class="actions btn btn-primary">
+  <div class="form-group">
+    <strong>Upload a Profile Pic:</strong>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>

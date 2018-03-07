@@ -40,6 +40,11 @@
   <div class="form-group">
     <%= f.text_area :bio, placeholder: "Tell us about yourself...", class: "form-control" %>
 
+  <div class="form-group">
+    <strong>Upload a Profile Pic:</strong>
+    <%= f.file_field :avatar %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
