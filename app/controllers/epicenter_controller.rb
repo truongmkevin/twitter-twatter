@@ -26,4 +26,9 @@ class EpicenterController < ApplicationController
   def unfollow
     @name = params[:name]
   end
+
+  def tag_tweets
+    @tag = Tag.find(params[:id])
+  end
+
 end
