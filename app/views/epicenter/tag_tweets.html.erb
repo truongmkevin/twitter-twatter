@@ -6,10 +6,12 @@
   <!-- a place for current user stats -->
   <div>
     <% @tag.tweets.order(created_at: :desc).each do |tweet| %>
-        <p>
+      <p>
       <%= tweet.user.name %> <%= "@#{tweet.user.username}" %>
-      • <%= time_ago_in_words(tweet.created_at) %>
-        </p>
+      •
+      <%= time_ago_in_words(tweet.created_at) if Time.now - tweet.created_at < 86400 %>
+      <%= tweet.created_at.strftime('%b%e') if Time.now - tweet.created_at > 86400 %>
+      </p>
   <p>
     <%= tweet.message.html_safe %>
   </p>
